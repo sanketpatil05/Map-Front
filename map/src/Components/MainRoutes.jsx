@@ -1,16 +1,16 @@
 import React from 'react'
 import{Routes, Route} from "react-router-dom"
-import { Dashboard } from './Dashboard'
-import { Home } from './Home'
-import { Login } from './Login'
+import { Dashboard } from '../Pages/Dashboard'
+import { Login } from '../Pages/Login'
 import { PrivateRoute } from './PrivateRoute'
-import { Signup } from './Signup'
+import { Signup } from '../Pages/Signup'
 export const MainRoutes = () => {
   return (
     <div>
     
     <Routes>
-          <Route path="/" element={<Home />} />
+        
+
  
   <Route path="/login" element={<Login />} />
 

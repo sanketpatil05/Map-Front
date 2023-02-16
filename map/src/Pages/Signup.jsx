@@ -1,7 +1,7 @@
 import { Button } from '@chakra-ui/button'
 import { FormControl, FormLabel } from '@chakra-ui/form-control'
 import { Input } from '@chakra-ui/input'
-import { Container } from '@chakra-ui/layout'
+import { Container, Text } from '@chakra-ui/layout'
 import React, { useState } from 'react'
 import axios from "axios";
 export const Signup = () => {
@@ -46,10 +46,15 @@ export const Signup = () => {
 
 
   return (
-    <div>Signup
+    <div>
 
 <Container>
-    
+<Text fontSize={"20px"} color="green"> Signup</Text>
+      </Container>
+
+<Container>
+
+
     <FormControl>
       <FormLabel>Enter Your email</FormLabel>
       <Input type='text' onChange={handleChange} id="email"  />

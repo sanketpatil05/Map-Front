@@ -1,13 +1,17 @@
 import { Button } from '@chakra-ui/button'
 import { FormControl, FormLabel } from '@chakra-ui/form-control'
 import { Input } from '@chakra-ui/input'
-import { Container } from '@chakra-ui/layout'
+import { Container, Text } from '@chakra-ui/layout'
 import React, { useState } from 'react'
 import axios from "axios";
+import { useDispatch } from 'react-redux'
+import { get_auth } from '../Redux/action'
+
 export const Login = () => {
 
   const [data, setData] =useState({});
   
+  const dispatch = useDispatch()
 
   const handleChange=(e)=>{
 
@@ -28,10 +32,10 @@ export const Login = () => {
        
      console.log("data",res.data.token)
      
-    //  if(res.data.token){
-    
-   
-    //  }
+     if(res.data.token){
+        
+      dispatch(get_auth())
+     }
      }).catch((er)=>{
       console.log(er)
       alert("Error occured")
@@ -46,10 +50,13 @@ export const Login = () => {
 
 
   return (
-    <div>Login
-
-<Container>
+    <div>
+      
+      
     
+
+      <Container>
+<Text fontSize={"20px"} color="green">  Login</Text>
     <FormControl>
       <FormLabel>Enter Your email</FormLabel>
       <Input type='text' onChange={handleChange} id="email"  />
@@ -60,6 +67,9 @@ export const Login = () => {
       <Button type="submit" colorScheme='teal' onClick={handlesubmit} >Login</Button>
     </FormControl>
     </Container>
+  
+        
+
      
 
 
