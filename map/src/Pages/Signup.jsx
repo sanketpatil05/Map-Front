@@ -24,7 +24,7 @@ export const Signup = () => {
     const handlesubmit=()=>{
     
      console.log(data);
-     axios.post("http://localhost:5000/user/signup",data).then((res)=>{
+     axios.post("https://map-backend-eqb9.onrender.com/user/signup",data).then((res)=>{
        if(res){
         alert("Sign up  successfull")
        }

@@ -9,7 +9,7 @@ export const Dashboard = () => {
 
 useEffect(()=>{
 
-  axios.get("http://localhost:5000/city").then((res)=>{
+  axios.get("https://map-backend-eqb9.onrender.com/city").then((res)=>{
 
   console.log(res.data)
   setData(res.data)
