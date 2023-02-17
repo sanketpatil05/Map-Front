@@ -12,7 +12,8 @@ export const MainRoutes = () => {
     <Routes>
         
 
- 
+    <Route path='/' element={<Signup/>} />
+
   <Route path="/login" element={<Login />} />
 
  
