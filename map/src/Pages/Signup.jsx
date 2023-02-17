@@ -23,15 +23,14 @@ export const Signup = () => {
 
     const handlesubmit=()=>{
     
-     //console.log(data);
-     axios.post("https://reqres.in/api/login",data).then((res)=>{
-       
-     console.log("data",res.data.token)
+     console.log(data);
+     axios.post("http://localhost:5000/user/signup",data).then((res)=>{
+       if(res){
+        alert("Sign up  successfull")
+       }
      
-    //  if(res.data.token){
-    
-   
-    //  }
+     
+
      }).catch((er)=>{
       console.log(er)
       alert("Error occured")
@@ -49,7 +48,7 @@ export const Signup = () => {
     <div>
 
 <Container>
-<Text fontSize={"20px"} color="green"> Signup</Text>
+<Text fontSize={"6xl"} color="green"> Signup</Text>
       </Container>
 
 <Container>

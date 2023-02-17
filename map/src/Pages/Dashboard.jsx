@@ -1,10 +1,45 @@
-import React from 'react'
-import Navbar from '../Components/Navbar'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { Card,  CardBody,  Text, Wrap } from '@chakra-ui/react'
+import { Link } from 'react-router-dom';
 
 export const Dashboard = () => {
+
+  const [data, setData]=useState([]);
+
+useEffect(()=>{
+
+  axios.get("http://localhost:5000/city").then((res)=>{
+
+  console.log(res.data)
+  setData(res.data)
+  })
+  .catch((er)=>{
+    console.log(er)
+  })
+
+
+},[])
   return (
 <>
-    <div>Dashboard</div>
+    <Text fontSize='6xl' color={"red"}>Dashboard</Text>
+
+     <Wrap >
+     {data.map((el)=>(
+
+       
+        <Link to={`/dashboard/${el._id}`} state={el}  ><Card key={el._id} bg='green.200' > 
+         <CardBody>
+             <Text>{el.city}</Text> 
+
+         </CardBody>
+        </Card></Link>
+       ))}
+     </Wrap>
+      
+
+      
+   
 </>
  
   )

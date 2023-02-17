@@ -4,6 +4,7 @@ import { Dashboard } from '../Pages/Dashboard'
 import { Login } from '../Pages/Login'
 import { PrivateRoute } from './PrivateRoute'
 import { Signup } from '../Pages/Signup'
+import SMap from './SMap'
 export const MainRoutes = () => {
   return (
     <div>
@@ -25,7 +26,8 @@ export const MainRoutes = () => {
 
     </PrivateRoute>
    }/>
-
+ 
+ <Route path='/dashboard/:id' element={<SMap/>} />
 
   <Route path="*" element={<h3>Page Not Found</h3>} />
     </Routes>
